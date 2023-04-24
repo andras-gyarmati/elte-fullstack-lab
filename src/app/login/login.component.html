@@ -1,7 +1,16 @@
+<ng-template #emailErrorTemplate>
+  <ng-container *ngIf="loginForm.controls['email'].hasError('required')">
+    Please input your email!
+  </ng-container>
+  <ng-container *ngIf="loginForm.controls['email'].hasError('email')">
+    Please provide a valid email!
+  </ng-container>
+</ng-template>
+
 <div nz-row nzJustify="center">
-  <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm()">
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your username!">
+      <nz-form-control nzErrorTip="emailErrorTemplate">
         <nz-input-group nzPrefixIcon="user">
           <input type="text" nz-input formControlName="userName" placeholder="Username"/>
         </nz-input-group>
