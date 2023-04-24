@@ -14,6 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NzFormModule} from "ng-zorro-antd/form";
 import {NzInputModule} from "ng-zorro-antd/input";
+import {NzButtonModule} from "ng-zorro-antd/button";
+import {NzCheckboxModule} from "ng-zorro-antd/checkbox";
 
 registerLocaleData(en);
 
@@ -32,7 +34,9 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NzFormModule,
     NzInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NzButtonModule,
+    NzCheckboxModule
   ],
   providers: [
     {provide: NZ_I18N, useValue: en_US}
